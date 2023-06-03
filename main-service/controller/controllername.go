@@ -1,7 +1,8 @@
 package controllername
 
-import "fmt"
+import "github.com/alexcesaro/log/stdlog"
 
 func MainService() {
-	fmt.Println("Hello Controller")
+	logger := stdlog.GetFromFlags()
+	logger.Info("Main service started")
 }

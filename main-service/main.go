@@ -1,12 +1,20 @@
 package main
 
 import (
-	"fmt"
+	"io/ioutil"
 
-	controllername "example.com/main-service/controller"
+	"example.com/main-service/database"
+	"github.com/alexcesaro/log/stdlog"
 )
 
 func main() {
-	fmt.Println("Hello world")
-	controllername.MainService()
+	logger := stdlog.GetFromFlags()
+	logger.Info("Exampl Service started!")
+
+	fileData, err := ioutil.ReadFile("./config/config.json")
+	if err != nil {
+		panic(err)
+	}
+
+	database.SetParameters(fileData)
 }

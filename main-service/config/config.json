@@ -1,0 +1,7 @@
+{
+        "database_url": "localhost",
+        "database_port": "9093",
+        "database_user": "admin",
+        "database_password": "password",
+        "database_name": "example"
+}
